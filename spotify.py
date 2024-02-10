@@ -32,7 +32,7 @@ def get_loudness_change(segments):
     pitches = [segment['pitches'] for segment in segments]
     return durations, loudness, pitches
 
-def analyze(track_details):
+def analyze_track(track_details):
     segments = track_details.get('segments')
     durations, loudness, pitches = get_loudness_change(segments)
     return {
