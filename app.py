@@ -1,15 +1,14 @@
-from io import BytesIO
-import json
-from flask import Flask, render_template, request, session, send_file
-import jinja2
-env = jinja2.Environment()
-env.globals.update(zip=zip)
-import requests
-from flask import request
-import ast
-app = Flask(__name__)
+from fastapi import FastAPI
+from starlette.responses import JSONResponse
 
+app = FastAPI()
 
-@app.route('/analyze', methods=['GET'])
-def analyze():
+@app.get('/analyze')
+async def analyze():
     # get track id
+    # Placeholder for the actual implementation
+    return JSONResponse(content={"message": "I am a teapot"})
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=3000)
