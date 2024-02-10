@@ -1,15 +1,14 @@
 from fastapi import FastAPI
 from starlette.responses import JSONResponse
+from spotify import *
 
 app = FastAPI()
 
 @app.get('/analyze')
 async def analyze(track_id: str):
-    # Placeholder for the actual implementation
-    # Here you would typically call the get_analysis function from spotify.py
-    # with the provided track_id and return its result.
-    return JSONResponse(content={"message": f"I am a {track_id} teapot"})
-
+    track_info = get_analysis(track_id)
+    data = analyze(track_info)
+    return JSONResponse(content=data)
 
 if __name__ == "__main__":
     import uvicorn
