@@ -3,8 +3,8 @@ import dotenv
 import os
 
 dotenv.load_dotenv(".env")
-client_id = os.environ['CLIENT_ID']
-client_secret = os.environ['CLIENT_SECRET']
+client_id = os.environ['SPOTIFY_ID']
+client_secret = os.environ['SPOTIFY_SECRET']
 
 def get_spotify_access_token(client_id, client_secret):
     auth_url = 'https://accounts.spotify.com/api/token'
